@@ -76,7 +76,16 @@ async function run() {
       }
       next();
     }
-   
+    // const verifyAgent = async (req, res, next) => {
+    //   const email = req.decoded.email;
+    //   const query = {email: email};
+    //   const user = await usersCollection.findOne(query);
+    //   const isAgent = user?.role === 'agent';
+    //   if(!isAgent){
+    //     return res.status(403).send({message: 'forbidden access'})
+    //   }
+    //   next();
+    // }
 
     // ------------------------------------------ Users related API Starts ----------------------------------------
     app.get('/allUsers', verifyToken, verifyAdmin, async (req, res) => {
@@ -237,7 +246,7 @@ async function run() {
 
 
 
-  -------------------------------
+    // ------------------------------------------ All properties related API Ends ----------------------------------------
 
 
 
